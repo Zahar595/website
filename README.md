@@ -3,7 +3,10 @@
 A 3D Flappy Bird built with **React + three.js (react-three-fiber)** and deployed on **Vercel**,
 with a **live global leaderboard** that updates while you play.
 
-**Play:** https://flappy-bird-3d-umber.vercel.app
+**Play:** https://flappy-bird-3d-zahar595.vercel.app
+_(if Vercel asks you to log in, the project's Deployment Protection is still on — see [Deployment](#deployment))_
+
+[Vercel project](https://vercel.com/zahar595/flappy-bird-3d)
 
 ![stack](https://img.shields.io/badge/react-18-61dafb) ![stack](https://img.shields.io/badge/three.js-r169-black) ![stack](https://img.shields.io/badge/deploy-vercel-black)
 
@@ -67,6 +70,18 @@ POST /api/leaderboard                          -> { action: "ping", playerId }
 
 Scores are validated (integer `0…999`), names sanitised to 14 characters, and writes are
 rate limited per IP.
+
+## Deployment
+
+The site is deployed on Vercel from this repository's branch as a production deployment
+(`npm install` → `npm run build` → `dist/`, plus `api/leaderboard.js` as a Node function).
+
+One account-level note: new Vercel accounts default to **Standard Protection**
+(`ssoProtection.deploymentType = all_except_custom_domains`). Because this project has no
+custom domain, *every* URL — including the production `*.vercel.app` alias — sits behind a
+Vercel login wall for anonymous visitors. To make it public, open
+**Project → Settings → Deployment Protection → Vercel Authentication → Disabled**
+(or attach a custom domain, which is exempt).
 
 ## Structure
 
