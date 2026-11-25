@@ -153,14 +153,18 @@ export default function World({ game }) {
         </mesh>
       ))}
 
-      {/* sun */}
+      {/* sun — fog is disabled so it stays a crisp disc through the haze */}
       <mesh position={[70, 46, -230]}>
-        <sphereGeometry args={[16, 24, 16]} />
-        <meshBasicMaterial color="#fff6cf" />
+        <sphereGeometry args={[15, 24, 16]} />
+        <meshBasicMaterial color="#fff8dc" fog={false} toneMapped={false} />
       </mesh>
-      <mesh position={[70, 46, -232]}>
-        <sphereGeometry args={[28, 24, 16]} />
-        <meshBasicMaterial color="#ffe9a3" transparent opacity={0.28} />
+      <mesh position={[70, 46, -234]}>
+        <sphereGeometry args={[27, 24, 16]} />
+        <meshBasicMaterial color="#ffe9a3" transparent opacity={0.3} fog={false} toneMapped={false} />
+      </mesh>
+      <mesh position={[70, 46, -238]}>
+        <sphereGeometry args={[44, 24, 16]} />
+        <meshBasicMaterial color="#ffe08a" transparent opacity={0.13} fog={false} toneMapped={false} />
       </mesh>
     </group>
   )

@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import Bird from './Bird'
 import Pipes from './Pipes'
 import World from './World'
-import { CONFIG, step } from '../game/engine'
+import { step } from '../game/engine'
 
 function SkyDome() {
   const material = useMemo(() => {
@@ -106,11 +106,6 @@ export default function Scene({ game }) {
       <World game={game} />
       <Pipes game={game} />
       <Bird game={game} />
-
-      {/* invisible walls keep the corridor readable */}
-      <mesh position={[0, CONFIG.floor, 0]} visible={false}>
-        <boxGeometry args={[1, 1, 1]} />
-      </mesh>
     </Canvas>
   )
 }

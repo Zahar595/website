@@ -69,7 +69,8 @@ POST /api/leaderboard                          -> { action: "ping", playerId }
 ```
 
 Scores are validated (integer `0…999`), names sanitised to 14 characters, and writes are
-rate limited per IP.
+rate limited per IP. An empty store is seeded with five example runs so the board is never
+blank on a fresh deploy.
 
 ## Deployment
 
